@@ -3,6 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CiudadModule } from './ciudad/ciudad.module';
+import { EstudiantesModule } from './estudiantes/estudiantes.module';
+import { Estudiante } from './estudiantes/entities/estudiante.entity';
+import { EscuelaModule } from './escuela/escuela.module';
+import { Escuela } from './escuela/entities/escuela.entity';
 
 
 
@@ -11,15 +15,17 @@ import { CiudadModule } from './ciudad/ciudad.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '127.0.0.1',
+      host: 'localhost',
       port: 3306,
       username: 'root',
       password:'1234',
-      database: 'escuela',
-      entities: ['dist/**/**.entity{.ts,.js}'],
-      synchronize: false,
+      database: 'escolar',
+      entities: [Escuela],
+      synchronize: true,
     }),
     CiudadModule,
+    EstudiantesModule,
+    EscuelaModule,
     
   ],
   controllers: [AppController],
