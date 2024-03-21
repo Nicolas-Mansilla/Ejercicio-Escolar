@@ -7,6 +7,7 @@ import { EstudiantesModule } from './estudiantes/estudiantes.module';
 import { Estudiante } from './estudiantes/entities/estudiante.entity';
 import { EscuelaModule } from './escuela/escuela.module';
 import { Escuela } from './escuela/entities/escuela.entity';
+import { ProfesorModule } from './profesor/profesor.module';
 
 
 
@@ -20,12 +21,13 @@ import { Escuela } from './escuela/entities/escuela.entity';
       username: 'root',
       password:'1234',
       database: 'escolar',
-      entities: [Escuela],
+      entities: [],
       synchronize: true,
     }),
     CiudadModule,
     EstudiantesModule,
     EscuelaModule,
+    ProfesorModule,
     
   ],
   controllers: [AppController],
