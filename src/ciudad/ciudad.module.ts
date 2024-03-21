@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { CiudadController } from './ciudad.controller';
 import { CiudadService } from './ciudad.service';
+import { CiudadController } from './ciudad.controller';
 
 @Module({
   controllers: [CiudadController],
-  providers: [CiudadService]
+  providers: [CiudadService],
 })
 export class CiudadModule {}

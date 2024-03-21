@@ -1,13 +1,13 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity('Ciudades')
-export class Ciudad {
+@Entity('Profesor')
+export class Profesor {
   @PrimaryGeneratedColumn()
-  private idCiudad: number;
+  private idProfesor: number;
 
   @Column({ length: 50 })
   public Nombre: string;
 
-  @Column('int')
-  public CodigoPostal: number;
+  @Column({ length: 50 })
+  public Apellido: string;
 }

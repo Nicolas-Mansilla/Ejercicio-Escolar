@@ -7,28 +7,28 @@ import { EstudiantesModule } from './estudiantes/estudiantes.module';
 import { Estudiante } from './estudiantes/entities/estudiante.entity';
 import { EscuelaModule } from './escuela/escuela.module';
 import { Escuela } from './escuela/entities/escuela.entity';
-
-
-
+import { Ciudad } from './ciudad/entities/ciudad.entity';
+import { ProfesorModule } from './profesor/profesor.module';
+import { Profesor } from './profesor/entities/profesor.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: '127.0.0.1',
       port: 3306,
       username: 'root',
-      password:'1234',
+      password: 'root',
       database: 'escolar',
-      entities: [Escuela],
+      entities: [Profesor],
       synchronize: true,
     }),
     CiudadModule,
     EstudiantesModule,
     EscuelaModule,
-    
+    ProfesorModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
